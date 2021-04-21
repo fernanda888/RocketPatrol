@@ -1,12 +1,12 @@
-//Rocket prefab
-class Rocket extends Phaser.GameObjects.Sprite{
+//frog prefab
+class frog extends Phaser.GameObjects.Sprite{
     constructor(scene, x, y, texture, frame){
         super(scene, x, y, texture, frame);
         //add object to exciting scenee
         scene.add.existing(this); //add to existing, displayList, updateList
-        this.isFiring=false; //track rockets firing status
+        this.isFiring=false; //track frogs firing status
         this.moveSpeed=2; //pixels per frame
-        this.sfxRocket = scene.sound.add('sfx_rocket'); // add rocket sfx
+        this.sfxfrog = scene.sound.add('sfx_frog'); // add frog sfx
     }
 
     update(){
@@ -24,7 +24,7 @@ class Rocket extends Phaser.GameObjects.Sprite{
         //fire button
         if(Phaser.Input.Keyboard.JustDown(keyF) && !this.isFiring) {
             this.isFiring= true;
-            this.sfxRocket.play();  // play sfx
+            this.sfxfrog.play();  // play sfx
         }
 
         //if fired, move up
